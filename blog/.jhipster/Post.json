@@ -1,0 +1,75 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "body",
+            "otherEntityName": "body",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "post"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "cover",
+            "otherEntityName": "asset",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "post"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "author",
+            "otherEntityName": "user",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "post"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commentaries",
+            "otherEntityName": "commentary",
+            "otherEntityRelationshipName": "post"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "categories",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "post"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "publicatedAt",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "removed",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180524113603",
+    "entityTableName": "post",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "microserviceName": "blog"
+}
