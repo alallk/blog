@@ -96,3 +96,9 @@ task wrapper(type: Wrapper) {
 }
 
 defaultTasks 'bootRun'
+
+springBoot {
+    mainClass = 'io.github.jhipster.registry.JHipsterRegistryApp'
+    executable = true
+    buildInfo()
+}

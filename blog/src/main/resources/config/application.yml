@@ -43,7 +43,7 @@ ribbon:
 #        default:
 #            execution:
 #                isolation:
-#                    thread:
+#                    thread:spring.servlet
 #                        timeoutInMilliseconds: 10000
 # See https://github.com/spring-cloud/spring-cloud-netflix/issues/1330
 feign:
@@ -84,6 +84,13 @@ spring:
             enabled: false
     thymeleaf:
         mode: XHTML
+
+    servlet:
+        multipart:
+            maxFileSize: -1
+            maxRequestSize: -1
+            enabled: false
+
 security:
     basic:
         enabled: false

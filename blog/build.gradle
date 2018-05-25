@@ -12,6 +12,8 @@ buildscript {
         classpath "io.spring.gradle:propdeps-plugin:0.0.9.RELEASE"
         classpath "gradle.plugin.org.detoeuf:swagger-codegen-plugin:1.7.4"
         classpath "gradle.plugin.com.gorylenko.gradle-git-properties:gradle-git-properties:1.4.17"
+        classpath "gradle.plugin.com.github.lkishalmi.gatling:gradle-gatling-plugin:0.7.0"
+        classpath files('gradle/gradle-gatling-plugin.jar')
         //jhipster-needle-gradle-buildscript-dependency - JHipster will add additional gradle build script plugins here
     }
 }
@@ -22,8 +24,7 @@ plugins {
     id "net.ltgt.apt-idea" version "0.13"
     id "net.ltgt.apt" version "0.13"
     id "io.spring.dependency-management" version "1.0.3.RELEASE"
-    id "com.github.lkishalmi.gatling" version "0.7.1"
-    //jhipster-needle-gradle-plugins - JHipster will add additional gradle plugins here
+    id "com.github.lkishalmi.gatling" version "0.7.3"
 }
 
 apply plugin: 'java'

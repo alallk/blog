@@ -1,0 +1,46 @@
+entity Post {
+	title String required,
+    createdAt ZonedDateTime required,
+    publicatedAt ZonedDateTime required,
+    removed Boolean
+}
+
+entity Commentary {
+	text String required
+}
+
+entity Category {
+	name String required
+}
+
+entity Body {
+	content String required
+}
+
+entity Asset {
+	path String required
+}
+
+relationship OneToMany {
+	Post{commentaries} to Commentary{post}
+}
+
+relationship OneToMany {
+    Post{categories} to Category
+}
+
+relationship OneToOne {
+	Commentary{user} to User
+}
+
+relationship OneToOne {
+    Post{body} to Body,
+    Post{cover} to Asset,
+    Post{author} to User
+}
+
+paginate Commentary, Post with infinite-scroll
+
+dto * with mapstruct
+// Set service options to all except few
+service all with serviceImpl
